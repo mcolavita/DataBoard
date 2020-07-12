@@ -229,6 +229,17 @@ public class MyDataBoard1<E extends Data<?>> implements DataBoard<E>{
     }
 
 
+    private void removeData(E dato){
+        int i=0;
+        for(i=0;i<board.size();i++) {
+            int j = 0;
+            for (j = 0; j < board.get(i).getSizeCollection(); j++) {
+                if (board.get(i).datasList().get(j).getData().equals(dato))
+                    this.board.get(i).datasList().remove(new MyData(dato));
+            }
+        }
+        return;
+}
 
 class Sort implements Comparator<MyData<?>> {
 
